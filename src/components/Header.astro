@@ -1,0 +1,419 @@
+---
+const categories = [
+  { name: '刑事', slug: 'criminal' },
+  { name: '民商', slug: 'civil' },
+  { name: '知识产权', slug: 'ip' },
+  { name: '涉外', slug: 'international' },
+  { name: '公司', slug: 'corporate' },
+  { name: '互联网', slug: 'internet' },
+  { name: '人工智能', slug: 'ai' },
+  { name: 'Web3', slug: 'web3' },
+  { name: '虚拟货币', slug: 'crypto' },
+];
+
+const navItems = [
+  { label: '首页', href: '/' },
+  { label: '热点新闻', href: '/news' },
+  { label: '新法推送', href: '/laws' },
+  { label: '典型案例', href: '/cases' },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner container">
+    <a href="/" class="logo">HiLaw</a>
+
+    <nav class="main-nav">
+      {navItems.map(item => (
+        <a href={item.href} class="nav-link">{item.label}</a>
+      ))}
+      <div class="category-dropdown">
+        <button class="nav-link dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          分类
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="dropdown-menu">
+          {categories.map(cat => (
+            <a href={`/articles/${cat.slug}`} class="dropdown-item">{cat.name}</a>
+          ))}
+        </div>
+      </div>
+      <a href="/about" class="nav-link">关于</a>
+    </nav>
+
+    <button class="search-btn" aria-label="搜索" id="searchToggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </button>
+
+    <button class="mobile-menu-btn" aria-label="菜单" id="mobileMenuToggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+</header>
+
+<div class="search-modal" id="searchModal" hidden>
+  <div class="search-overlay"></div>
+  <div class="search-box">
+    <input type="text" placeholder="搜索文章..." id="searchInput" autocomplete="off" />
+    <button class="search-close" id="searchClose" aria-label="关闭">✕</button>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <nav class="mobile-nav">
+    {navItems.map(item => (
+      <a href={item.href} class="mobile-nav-link">{item.label}</a>
+    ))}
+    <div class="mobile-categories">
+      <span class="mobile-section-label">分类</span>
+      {categories.map(cat => (
+        <a href={`/articles/${cat.slug}`} class="mobile-nav-link">{cat.name}</a>
+      ))}
+    </div>
+    <a href="/about" class="mobile-nav-link">关于</a>
+  </nav>
+</div>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    height: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    width: 100%;
+  }
+
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex: 1;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .category-dropdown {
+    position: relative;
+  }
+
+  .dropdown-trigger {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    padding: 0;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    min-width: 180px;
+    padding: var(--space-2);
+    z-index: 200;
+  }
+
+  .category-dropdown:hover .dropdown-menu,
+  .category-dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    transition: background var(--transition-fast);
+  }
+
+  .dropdown-item:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+  }
+
+  .search-btn {
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    padding: var(--space-2);
+    border-radius: 6px;
+  }
+
+  .search-btn:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    color: var(--color-text);
+    padding: var(--space-2);
+    border-radius: 6px;
+  }
+
+  .mobile-menu-btn:hover {
+    background: var(--color-tag-bg);
+  }
+
+  /* Search Modal */
+  .search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 80px;
+  }
+
+  .search-modal[hidden] { display: none; }
+
+  .search-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .search-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-6);
+    margin: 0 var(--space-4);
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: var(--space-4);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color var(--transition-fast);
+  }
+
+  .search-box input:focus {
+    border-color: var(--color-primary);
+  }
+
+  .search-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    color: var(--color-text-secondary);
+    font-size: 1.2rem;
+    padding: var(--space-2);
+    border-radius: 50%;
+  }
+
+  .search-close:hover {
+    background: var(--color-tag-bg);
+    color: var(--color-text);
+  }
+
+  .search-results {
+    margin-top: var(--space-4);
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .search-result-item {
+    display: block;
+    padding: var(--space-3);
+    border-radius: 6px;
+    transition: background var(--transition-fast);
+  }
+
+  .search-result-item:hover {
+    background: var(--color-primary-light);
+  }
+
+  .search-result-title {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 4px;
+  }
+
+  .search-result-excerpt {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-surface);
+    z-index: 150;
+    overflow-y: auto;
+  }
+
+  .mobile-menu[hidden] { display: none; }
+
+  .mobile-nav {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-text);
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover {
+    background: var(--color-tag-bg);
+  }
+
+  .mobile-categories {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-section-label {
+    display: block;
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 768px) {
+    .main-nav { display: none; }
+    .mobile-menu-btn { display: flex; }
+    .mobile-menu:not([hidden]) { display: flex; flex-direction: column; }
+  }
+</style>
+
+<script>
+  const searchToggle = document.getElementById('searchToggle');
+  const searchModal = document.getElementById('searchModal');
+  const searchClose = document.getElementById('searchClose');
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  const searchResults = document.getElementById('searchResults');
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  searchToggle?.addEventListener('click', () => {
+    searchModal?.removeAttribute('hidden');
+    searchInput?.focus();
+  });
+
+  searchClose?.addEventListener('click', () => {
+    searchModal?.setAttribute('hidden', '');
+  });
+
+  document.querySelector('.search-overlay')?.addEventListener('click', () => {
+    searchModal?.setAttribute('hidden', '');
+  });
+
+  mobileMenuToggle?.addEventListener('click', () => {
+    const hidden = mobileMenu?.hasAttribute('hidden');
+    if (hidden) {
+      mobileMenu?.removeAttribute('hidden');
+    } else {
+      mobileMenu?.setAttribute('hidden', '');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchModal?.setAttribute('hidden', '');
+    }
+  });
+
+  let fuse: any = null;
+  let searchIndex: any[] = [];
+
+  async function loadSearchIndex() {
+    if (fuse) return;
+    try {
+      const [newsRes, lawsRes, casesRes] = await Promise.all([
+        fetch('/news.json').catch(() => null),
+        fetch('/laws.json').catch(() => null),
+        fetch('/cases.json').catch(() => null),
+      ]);
+      const news = newsRes ? await newsRes.json() : [];
+      const laws = lawsRes ? await lawsRes.json() : [];
+      const cases = casesRes ? await casesRes.json() : [];
+      searchIndex = [...news, ...laws, ...cases];
+      const Fuse = (await import('fuse.js')).default;
+      fuse = new Fuse(searchIndex, { keys: ['title', 'excerpt'], threshold: 0.3 });
+    } catch (e) { console.warn('Search index load failed', e); }
+  }
+
+  searchInput?.addEventListener('focus', loadSearchIndex);
+
+  let debounceTimer: ReturnType<typeof setTimeout>;
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      if (!fuse || !searchInput?.value.trim()) {
+        if (searchResults) searchResults.innerHTML = '';
+        return;
+      }
+      const results = fuse.search(searchInput.value).slice(0, 8);
+      searchResults!.innerHTML = results.map((r: any) => `
+        <a href="${r.item.url}" class="search-result-item">
+          <div class="search-result-title">${r.item.title}</div>
+          <div class="search-result-excerpt">${r.item.excerpt || ''}</div>
+        </a>
+      `).join('');
+    }, 200);
+  });
+</script>

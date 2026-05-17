@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import NewsCard from '../components/NewsCard.astro';
+import CategoryNav from '../components/CategoryNav.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const allLaws = await getCollection('laws');
+const allCases = await getCollection('cases');
+
+const recentNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 4);
+const recentLaws = allLaws.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
+const recentCases = allCases.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
+
+// Collect all tags for tag cloud
+const allTags = [...allNews, ...allLaws, ...allCases].flatMap(item => item.data.tags);
+const tagCounts: Record<string, number> = {};
+allTags.forEach(tag => { tagCounts[tag] = (tagCounts[tag] || 0) + 1; });
+const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 20);
+---
+
+<BaseLayout title="HiLaw - 法律新闻 · 专业评论 · 新法解读" description="法律新闻 · 专业评论 · 新法解读">
+  <Header />
+
+  <main class="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">HiLaw</h1>
+        <p class="hero-subtitle">法律新闻 · 专业评论 · 新法解读</p>
+      </div>
+    </section>
+
+    <div class="container content-grid">
+      <aside class="sidebar">
+        <CategoryNav />
+        <div class="tag-cloud">
+          <h4 class="tag-cloud-title">标签云</h4>
+          <div class="tags">
+            {topTags.map(([tag, count]) => (
+              <a href={`/tags/${encodeURIComponent(tag)}`} class="tag" style={`font-size: ${0.8 + count * 0.05}rem`}>
+                {tag}
+              </a>
+            ))}
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-feed">
+        {recentNews.length > 0 && (
+          <section class="feed-section">
+            <div class="section-header">
+              <h2 class="section-title">热点新闻</h2>
+              <a href="/news" class="section-more">查看全部 →</a>
+            </div>
+            <div class="news-list">
+              {recentNews.map(news => (
+                <NewsCard
+                  title={news.data.title}
+                  excerpt={news.data.excerpt}
+                  date={news.data.date}
+                  category={news.data.category}
+                  tags={news.data.tags}
+                  source={news.data.source}
+                  href={`/news/${news.slug}`}
+                  type="news"
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {recentLaws.length > 0 && (
+          <section class="feed-section">
+            <div class="section-header">
+              <h2 class="section-title">新法推送</h2>
+              <a href="/laws" class="section-more">查看全部 →</a>
+            </div>
+            <div class="news-list">
+              {recentLaws.map(law => (
+                <NewsCard
+                  title={law.data.title}
+                  excerpt={law.data.excerpt}
+                  date={law.data.date}
+                  category={law.data.category}
+                  tags={law.data.tags}
+                  href={`/laws/${law.slug}`}
+                  type="law"
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {recentCases.length > 0 && (
+          <section class="feed-section">
+            <div class="section-header">
+              <h2 class="section-title">典型案例</h2>
+              <a href="/cases" class="section-more">查看全部 →</a>
+            </div>
+            <div class="news-list">
+              {recentCases.map(caseItem => (
+                <NewsCard
+                  title={caseItem.data.title}
+                  excerpt={caseItem.data.excerpt}
+                  date={caseItem.data.date}
+                  category={caseItem.data.category}
+                  tags={caseItem.data.tags}
+                  source={caseItem.data.source}
+                  href={`/cases/${caseItem.slug}`}
+                  type="case"
+                />
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main-content {
+    padding-top: 64px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3db8 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-4);
+    letter-spacing: 0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.08em;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-8);
+    padding: var(--space-12) var(--space-6);
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .tag-cloud {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-6);
+  }
+
+  .tag-cloud-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .main-feed {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .feed-section {
+    animation: fadeUp var(--transition-normal) forwards;
+    opacity: 0;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    color: var(--color-text);
+  }
+
+  .section-more {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .section-more:hover {
+    text-decoration: underline;
+  }
+
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 1199px) {
+    .content-grid {
+      grid-template-columns: 220px 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .sidebar > :global(.category-nav) {
+      flex: 1;
+      min-width: 200px;
+    }
+    .tag-cloud {
+      flex: 2;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .content-grid { padding: var(--space-6) var(--space-4); }
+    .sidebar { display: none; }
+  }
+</style>

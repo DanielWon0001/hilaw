@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<BaseLayout title="热点新闻 - HiLaw" description="法律热点新闻追踪">
+  <Header />
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">热点新闻</h1>
+        <p class="page-subtitle">追踪法律热点，解读时事动态</p>
+      </div>
+    </section>
+    <div class="container content-grid">
+      <aside class="sidebar">
+        <CategoryNav />
+      </aside>
+      <div class="main-feed">
+        <div class="news-list">
+          {sortedNews.map(news => (
+            <NewsCard
+              title={news.data.title}
+              excerpt={news.data.excerpt}
+              date={news.data.date}
+              category={news.data.category}
+              tags={news.data.tags}
+              source={news.data.source}
+              href={`/news/${news.slug}`}
+              type="news"
+            />
+          ))}
+        </div>
+        {sortedNews.length === 0 && (
+          <div class="empty-state">
+            <p>暂无热点新闻</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main-content { padding-top: 64px; }
+  .page-hero { background: linear-gradient(135deg, var(--color-accent) 0%, #e05a2b 100%); padding: var(--space-12) 0; text-align: center; }
+  .page-title { font-family: var(--font-serif); font-size: 2.5rem; color: white; margin-bottom: var(--space-2); }
+  .page-subtitle { color: rgba(255,255,255,0.85); font-size: 1.1rem; }
+  .content-grid { display: grid; grid-template-columns: 240px 1fr; gap: var(--space-8); padding: var(--space-8) var(--space-6); align-items: start; }
+  .sidebar { position: sticky; top: 88px; }
+  .news-list { display: flex; flex-direction: column; gap: var(--space-4); }
+  .empty-state { text-align: center; padding: var(--space-12); color: var(--color-text-secondary); }
+  @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+</style>

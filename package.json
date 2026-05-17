@@ -1,0 +1,15 @@
+{
+  "name": "hilaw",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "@astrojs/mdx": "^3.1.0",
+    "fuse.js": "^7.0.0"
+  }
+}

@@ -1,0 +1,156 @@
+/* ===== CSS Variables ===== */
+:root {
+  --color-primary: #2B5CE6;
+  --color-primary-light: #EEF2FF;
+  --color-accent: #FF7A45;
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #6B7280;
+  --color-border: #E5E7EB;
+  --color-tag-bg: #F3F4F6;
+
+  --font-serif: 'Noto Serif SC', Georgia, serif;
+  --font-sans: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --radius-sm: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease-out;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p { margin-bottom: var(--space-4); }
+p:last-child { margin-bottom: 0; }
+
+/* ===== Layout Utilities ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp var(--transition-normal) forwards;
+  opacity: 0;
+}
+
+.fade-up:nth-child(1) { animation-delay: 0ms; }
+.fade-up:nth-child(2) { animation-delay: 80ms; }
+.fade-up:nth-child(3) { animation-delay: 160ms; }
+.fade-up:nth-child(4) { animation-delay: 240ms; }
+.fade-up:nth-child(5) { animation-delay: 320ms; }
+.fade-up:nth-child(6) { animation-delay: 400ms; }
+.fade-up:nth-child(7) { animation-delay: 480ms; }
+.fade-up:nth-child(8) { animation-delay: 560ms; }
+
+/* ===== Tags ===== */
+.tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-tag-bg);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.tag:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.tag刑事 { background: #FEE2E2; color: #991B1B; }
+.tag民商 { background: #DBEAFE; color: #1E40AF; }
+.tag知产 { background: #D1FAE5; color: #065F46; }
+.tag涉外 { background: #FEF3C7; color: #92400E; }
+.tag公司 { background: #E0E7FF; color: #3730A3; }
+.tag互联网 { background: #F3E8FF; color: #6B21A8; }
+.tag人工智能 { background: #FECDD3; color: #9F1239; }
+.tagWeb3 { background: #CCFBF1; color: #0F766E; }
+.tag虚拟货币 { background: #FEF9C3; color: #854D0E; }

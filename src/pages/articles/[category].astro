@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const allLaws = await getCollection('laws');
+const allCases = await getCollection('cases');
+
+export async function getStaticPaths() {
+  const categoryMap: Record<string, string> = {
+    criminal: '刑事',
+    civil: '民商',
+    ip: '知识产权',
+    international: '涉外',
+    corporate: '公司',
+    internet: '互联网',
+    ai: '人工智能',
+    web3: 'Web3',
+    crypto: '虚拟货币',
+  };
+  return Object.keys(categoryMap).map(slug => ({ params: { category: slug } }));
+}
+
+const categoryMap: Record<string, string> = {
+  criminal: '刑事',
+  civil: '民商',
+  ip: '知识产权',
+  international: '涉外',
+  corporate: '公司',
+  internet: '互联网',
+  ai: '人工智能',
+  web3: 'Web3',
+  crypto: '虚拟货币',
+};
+
+const { category } = Astro.params;
+const categoryName = categoryMap[category] || category;
+
+interface PostItem {
+  title: string;
+  date: string;
+  category: string;
+  tags: string[];
+  excerpt: string;
+  slug: string;
+  url: string;
+}
+
+const allPosts: PostItem[] = [
+  ...allNews.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/news/${p.slug}` })),
+  ...allLaws.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/laws/${p.slug}` })),
+  ...allCases.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/cases/${p.slug}` })),
+];
+
+const filteredPosts = allPosts.filter(p => p.category === categoryName);
+---
+
+<BaseLayout title={`${categoryName} - HiLaw`} description={`${categoryName}分类文章`}>
+  <Header />
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">{categoryName}</h1>
+      </div>
+    </section>
+    <div class="container content-grid">
+      <aside class="sidebar">
+        <CategoryNav activeSlug={category} />
+      </aside>
+      <div class="main-feed">
+        <div class="article-grid">
+          {filteredPosts.map(post => (
+            <ArticleCard
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              category={post.category}
+              tags={post.tags}
+              href={post.url}
+            />
+          ))}
+        </div>
+        {filteredPosts.length === 0 && (
+          <div class="empty-state"><p>该分类下暂无文章</p></div>
+        )}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main-content { padding-top: 64px; }
+  .page-hero { background: linear-gradient(135deg, var(--color-primary) 0%, #1a3db8 100%); padding: var(--space-12) 0; text-align: center; }
+  .page-title { font-family: var(--font-serif); font-size: 2.5rem; color: white; }
+  .content-grid { display: grid; grid-template-columns: 240px 1fr; gap: var(--space-8); padding: var(--space-8) var(--space-6); align-items: start; }
+  .sidebar { position: sticky; top: 88px; }
+  .article-grid { display: grid; gap: var(--space-4); }
+  .empty-state { text-align: center; padding: var(--space-12); color: var(--color-text-secondary); }
+  @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+</style>

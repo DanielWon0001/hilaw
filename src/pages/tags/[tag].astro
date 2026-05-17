@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allNews = await getCollection('news');
+  const allLaws = await getCollection('laws');
+  const allCases = await getCollection('cases');
+
+  const allPosts = [...allNews, ...allLaws, ...allCases];
+  const tagSet = new Set<string>();
+  allPosts.forEach(p => p.data.tags.forEach(t => tagSet.add(t)));
+  return Array.from(tagSet).map(tag => ({ params: { tag }, props: { tag } }));
+}
+
+const allNews = await getCollection('news');
+const allLaws = await getCollection('laws');
+const allCases = await getCollection('cases');
+
+interface PostItem {
+  title: string;
+  date: string;
+  category: string;
+  tags: string[];
+  excerpt: string;
+  slug: string;
+  url: string;
+  type: string;
+}
+
+const allPosts: PostItem[] = [
+  ...allNews.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/news/${p.slug}`, type: 'news' })),
+  ...allLaws.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/laws/${p.slug}`, type: 'law' })),
+  ...allCases.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/cases/${p.slug}`, type: 'case' })),
+];
+
+const { tag } = Astro.props;
+const filteredPosts = allPosts.filter(p => p.tags.includes(tag));
+---
+
+<BaseLayout title={`标签: ${tag} - HiLaw`} description={`标签 ${tag} 下的文章`}>
+  <Header />
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">标签: {tag}</h1>
+        <p class="page-subtitle">共 {filteredPosts.length} 篇文章</p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="post-list">
+        {filteredPosts.map(post => (
+          <article class="post-item fade-up">
+            <div class="post-meta">
+              <span class={`tag tag${post.category}`}>{post.category}</span>
+              <time class="post-date">{post.date}</time>
+            </div>
+            <h2 class="post-title"><a href={post.url}>{post.title}</a></h2>
+            <p class="post-excerpt">{post.excerpt}</p>
+          </article>
+        ))}
+      </div>
+      {filteredPosts.length === 0 && (
+        <div class="empty-state"><p>暂无相关文章</p></div>
+      )}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main-content { padding-top: 64px; }
+  .page-hero { background: linear-gradient(135deg, var(--color-primary) 0%, #1a3db8 100%); padding: var(--space-12) 0; text-align: center; }
+  .page-title { font-family: var(--font-serif); font-size: 2.5rem; color: white; margin-bottom: var(--space-2); }
+  .page-subtitle { color: rgba(255,255,255,0.85); font-size: 1.1rem; }
+  .post-list { max-width: 800px; margin: 0 auto; padding: var(--space-8) var(--space-6); display: flex; flex-direction: column; gap: var(--space-6); }
+  .post-item { padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+  .post-meta { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-3); }
+  .post-date { font-size: 0.85rem; color: var(--color-text-secondary); }
+  .post-title { font-size: 1.25rem; font-family: var(--font-serif); margin-bottom: var(--space-2); }
+  .post-title a { color: var(--color-text); transition: color var(--transition-fast); }
+  .post-title a:hover { color: var(--color-primary); }
+  .post-excerpt { font-size: 0.9rem; color: var(--color-text-secondary); }
+  .empty-state { text-align: center; padding: var(--space-12); color: var(--color-text-secondary); }
+</style>

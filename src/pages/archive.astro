@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const allLaws = await getCollection('laws');
+const allCases = await getCollection('cases');
+
+interface PostItem {
+  title: string;
+  date: string;
+  category: string;
+  tags: string[];
+  excerpt: string;
+  slug: string;
+  type: string;
+}
+
+const allPosts: PostItem[] = [
+  ...allNews.map(p => ({ ...p.data, slug: `/news/${p.slug}`, type: 'news' })),
+  ...allLaws.map(p => ({ ...p.data, slug: `/laws/${p.slug}`, type: 'law' })),
+  ...allCases.map(p => ({ ...p.data, slug: `/cases/${p.slug}`, type: 'case' })),
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const byYear: Record<string, PostItem[]> = {};
+allPosts.forEach(post => {
+  const year = post.date.split('-')[0];
+  if (!byYear[year]) byYear[year] = [];
+  byYear[year].push(post);
+});
+const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="归档 - HiLaw" description="文章归档">
+  <Header />
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">归档</h1>
+        <p class="page-subtitle">全部文章按时间聚合</p>
+      </div>
+    </section>
+    <div class="container archive-container">
+      {years.map(year => (
+        <div class="year-section fade-up">
+          <h2 class="year-heading">{year}</h2>
+          <ul class="post-list">
+            {byYear[year].map(post => (
+              <li class="post-item">
+                <time class="post-date">{post.date}</time>
+                <a href={post.slug} class="post-title">{post.title}</a>
+                <span class={`tag tag${post.category}`}>{post.category}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      {allPosts.length === 0 && (
+        <div class="empty-state"><p>暂无文章</p></div>
+      )}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main-content { padding-top: 64px; }
+  .page-hero { background: linear-gradient(135deg, var(--color-primary) 0%, #1a3db8 100%); padding: var(--space-12) 0; text-align: center; }
+  .page-title { font-family: var(--font-serif); font-size: 2.5rem; color: white; margin-bottom: var(--space-2); }
+  .page-subtitle { color: rgba(255,255,255,0.85); font-size: 1.1rem; }
+  .archive-container { max-width: 900px; margin: 0 auto; padding: var(--space-12) var(--space-6); }
+  .year-section { margin-bottom: var(--space-12); }
+  .year-heading { font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-primary); margin-bottom: var(--space-6); padding-bottom: var(--space-3); border-bottom: 2px solid var(--color-primary-light); }
+  .post-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+  .post-item { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); }
+  .post-date { font-size: 0.85rem; color: var(--color-text-secondary); min-width: 90px; flex-shrink: 0; }
+  .post-title { font-size: 1rem; color: var(--color-text); flex: 1; transition: color var(--transition-fast); }
+  .post-title:hover { color: var(--color-primary); }
+  .empty-state { text-align: center; padding: var(--space-12); color: var(--color-text-secondary); }
+</style>
