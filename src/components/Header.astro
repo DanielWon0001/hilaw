@@ -16,6 +16,7 @@ const navItems = [
   { label: '热点新闻', href: '/news' },
   { label: '新法推送', href: '/laws' },
   { label: '典型案例', href: '/cases' },
+  { label: '评论文章', href: '/articles' },
 ];
 ---
 
@@ -71,6 +72,7 @@ const navItems = [
         <a href={`/articles/${cat.slug}`} class="mobile-nav-link">{cat.name}</a>
       ))}
     </div>
+    <a href="/articles" class="mobile-nav-link">评论文章</a>
     <a href="/about" class="mobile-nav-link">关于</a>
   </nav>
 </div>
