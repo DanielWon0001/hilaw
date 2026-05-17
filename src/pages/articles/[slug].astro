@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+---
+
+<BaseLayout title={`${article.data.title} - HiLaw`} description={article.data.excerpt}>
+  <Header />
+
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <span class={`tag tag-${article.data.category}`}>{article.data.category}</span>
+          <h1 class="page-hero-title">{article.data.title}</h1>
+          <div class="article-meta">
+            <time class="article-date">{article.data.date}</time>
+            {article.data.tags && article.data.tags.length > 0 && (
+              <div class="article-tags">
+                {article.data.tags.map(tag => (
+                  <a href={`/tags/${encodeURIComponent(tag)}`} class="tag">{tag}</a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="article-content">
+      <article class="article-body">
+        <Content />
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main-content {
+    padding-top: 72px;
+  }
+
+  .page-hero {
+    background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 50%, #FFF7ED 100%);
+    padding: 60px 0 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 85% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .page-hero-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1E293B;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .article-date {
+    font-size: 0.9rem;
+    color: #94A3B8;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Tag colors */
+  .tag-刑事 { background: #FEE2E2; color: #991B1B; }
+  .tag-民商 { background: #DBEAFE; color: #1E40AF; }
+  .tag-知识产权 { background: #D1FAE5; color: #065F46; }
+  .tag-涉外 { background: #FEF3C7; color: #92400E; }
+  .tag-公司 { background: #E0E7FF; color: #3730A3; }
+  .tag-互联网犯罪 { background: #F3E8FF; color: #6B21A8; }
+  .tag-刑事辩护 { background: #FEE2E2; color: #991B1B; }
+  .tag-医疗纠纷 { background: #D1FAE5; color: #065F46; }
+  .tag-热点评论 { background: #FEF3C7; color: #92400E; }
+  .tag-医疗 { background: #D1FAE5; color: #065F46; }
+
+  .article-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  .article-body {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #1E293B;
+  }
+
+  .article-body :global(h2) {
+    font-size: 1.5rem;
+    margin: 48px 0 16px;
+    color: #1E293B;
+    font-family: var(--font-serif);
+  }
+
+  .article-body :global(h3) {
+    font-size: 1.2rem;
+    margin: 32px 0 12px;
+    color: #1E293B;
+  }
+
+  .article-body :global(p) {
+    margin-bottom: 16px;
+  }
+
+  .article-body :global(ul), .article-body :global(ol) {
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+
+  .article-body :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .article-body :global(blockquote) {
+    border-left: 4px solid var(--color-primary);
+    padding: 16px 24px;
+    background: var(--color-primary-light);
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+    font-style: italic;
+    color: #64748B;
+  }
+
+  .article-body :global(pre) {
+    background: #1E293B;
+    color: #E2E8F0;
+    padding: 24px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 24px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .article-body :global(code) {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9em;
+    background: #F1F5F9;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .article-body :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+
+  .article-body :global(strong) {
+    font-weight: 600;
+    color: #1E293B;
+  }
+
+  .article-body :global(hr) {
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: 32px 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero-title {
+      font-size: 1.6rem;
+    }
+    .article-content {
+      padding: 32px 16px;
+    }
+  }
+</style>

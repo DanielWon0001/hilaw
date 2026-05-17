@@ -151,7 +151,30 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"cases": {
+		"articles": {
+"fake-blind-video.mdx": {
+	id: "fake-blind-video.mdx";
+  slug: "fake-blind-video";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"video-ai-rumor.mdx": {
+	id: "video-ai-rumor.mdx";
+  slug: "video-ai-rumor";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"wushan-elder-medical-delay.mdx": {
+	id: "wushan-elder-medical-delay.mdx";
+  slug: "wushan-elder-medical-delay";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+};
+"cases": {
 "ai-face-swap-case.md": {
 	id: "ai-face-swap-case.md";
   slug: "ai-face-swap-case";

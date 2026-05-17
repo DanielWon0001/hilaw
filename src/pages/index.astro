@@ -6,22 +6,21 @@ import NewsCard from '../components/NewsCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import CategoryNav from '../components/CategoryNav.astro';
 import { getCollection } from 'astro:content';
-import { getWPPosts, getCategoryName } from '../utils/wp';
 
 const allNews = await getCollection('news');
 const allLaws = await getCollection('laws');
 const allCases = await getCollection('cases');
+const allArticles = await getCollection('articles');
 
 const recentNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 4);
 const recentLaws = allLaws.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
 const recentCases = allCases.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
+const recentArticles = allArticles.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 2);
 
 const allTags = [...allNews, ...allLaws, ...allCases].flatMap(item => item.data.tags);
 const tagCounts: Record<string, number> = {};
 allTags.forEach(tag => { tagCounts[tag] = (tagCounts[tag] || 0) + 1; });
 const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 20);
-
-const recentArticles = await getWPPosts(2);
 ---
 
 <BaseLayout title="HiLaw - 法律新闻 · 专业评论 · 新法解读" description="法律新闻 · 专业评论 · 新法解读">
@@ -128,17 +127,17 @@ const recentArticles = await getWPPosts(2);
           <section class="feed-section">
             <div class="section-header">
               <h2 class="section-title">最新文章</h2>
-              <a href="https://www.lawmore.cn" class="section-more" target="_blank">查看全部 →</a>
+              <a href="/articles" class="section-more">查看全部 →</a>
             </div>
             <div class="news-list">
               {recentArticles.map(article => (
                 <ArticleCard
-                  title={article.title.rendered}
-                  excerpt={article.excerpt.rendered}
-                  date={new Date(article.date).toISOString().slice(0, 10)}
-                  category={getCategoryName(article.categories?.[0])}
-                  href={article.link}
-                  isExternal={true}
+                  title={article.data.title}
+                  excerpt={article.data.excerpt}
+                  date={article.data.date}
+                  category={article.data.category}
+                  tags={article.data.tags}
+                  href={`/articles/${article.slug}`}
                 />
               ))}
             </div>
