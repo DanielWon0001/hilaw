@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ArticleCard from '../components/ArticleCard.astro';
 import NewsCard from '../components/NewsCard.astro';
 import CategoryNav from '../components/CategoryNav.astro';
 import { getCollection } from 'astro:content';
@@ -15,7 +14,6 @@ const recentNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new 
 const recentLaws = allLaws.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
 const recentCases = allCases.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
 
-// Collect all tags for tag cloud
 const allTags = [...allNews, ...allLaws, ...allCases].flatMap(item => item.data.tags);
 const tagCounts: Record<string, number> = {};
 allTags.forEach(tag => { tagCounts[tag] = (tagCounts[tag] || 0) + 1; });
@@ -28,8 +26,13 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
   <main class="main-content">
     <section class="hero">
       <div class="container">
-        <h1 class="hero-title">HiLaw</h1>
-        <p class="hero-subtitle">法律新闻 · 专业评论 · 新法解读</p>
+        <div class="hero-inner">
+          <div class="hero-brand">
+            <span class="hero-logo-text">HiLaw</span>
+            <span class="hero-tagline">法律新闻 · 专业评论 · 新法解读</span>
+          </div>
+          <p class="hero-description">一个温暖的法律信息空间，在这里，复杂的法律问题被平实地讲述。</p>
+        </div>
       </div>
     </section>
 
@@ -122,144 +125,3 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
 
   <Footer />
 </BaseLayout>
-
-<style>
-  .main-content {
-    padding-top: 64px;
-  }
-
-  .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3db8 100%);
-    padding: var(--space-16) 0;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: var(--space-4);
-    letter-spacing: 0.02em;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 0.08em;
-  }
-
-  .content-grid {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: var(--space-8);
-    padding: var(--space-12) var(--space-6);
-    align-items: start;
-  }
-
-  .sidebar {
-    position: sticky;
-    top: 88px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-
-  .tag-cloud {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: var(--space-6);
-  }
-
-  .tag-cloud-title {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-4);
-    font-family: var(--font-sans);
-    font-weight: 600;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .main-feed {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-12);
-  }
-
-  .feed-section {
-    animation: fadeUp var(--transition-normal) forwards;
-    opacity: 0;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: var(--space-6);
-    padding-bottom: var(--space-3);
-    border-bottom: 2px solid var(--color-primary);
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-    font-family: var(--font-serif);
-    color: var(--color-text);
-  }
-
-  .section-more {
-    font-size: 0.9rem;
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .section-more:hover {
-    text-decoration: underline;
-  }
-
-  .news-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  @media (max-width: 1199px) {
-    .content-grid {
-      grid-template-columns: 220px 1fr;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .content-grid {
-      grid-template-columns: 1fr;
-    }
-    .sidebar {
-      position: static;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    .sidebar > :global(.category-nav) {
-      flex: 1;
-      min-width: 200px;
-    }
-    .tag-cloud {
-      flex: 2;
-      min-width: 200px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1rem; }
-    .content-grid { padding: var(--space-6) var(--space-4); }
-    .sidebar { display: none; }
-  }
-</style>
