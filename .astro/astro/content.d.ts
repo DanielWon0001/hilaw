@@ -189,6 +189,27 @@ declare module 'astro:content' {
   collection: "cases";
   data: InferEntrySchema<"cases">
 } & { render(): Render[".md"] };
+"case-277-patent-infringement.md": {
+	id: "case-277-patent-infringement.md";
+  slug: "case-277-patent-infringement";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-278-malicious-litigation.md": {
+	id: "case-278-malicious-litigation.md";
+  slug: "case-278-malicious-litigation";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-279-software-copyright.md": {
+	id: "case-279-software-copyright.md";
+  slug: "case-279-software-copyright";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
 };
 "laws": {
 "civil-contract-interpretation.md": {
