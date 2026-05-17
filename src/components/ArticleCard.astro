@@ -6,15 +6,17 @@ export interface Props {
   category: string;
   tags?: string[];
   href: string;
+  isExternal?: boolean;
 }
-const { title, excerpt, date, category, tags = [], href } = Astro.props;
+const { title, excerpt, date, category, tags = [], href, isExternal = false } = Astro.props;
 const categoryClass = `tag${category}`;
 ---
 
-<a href={href} class="article-card fade-up">
+<a href={href} class={`article-card fade-up ${isExternal ? 'external' : ''}`} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
   <div class="card-meta">
     <span class={`tag ${categoryClass}`}>{category}</span>
     <time class="card-date">{date}</time>
+    {isExternal && <span class="external-badge">原文 ↗</span>}
   </div>
   <h3 class="card-title">{title}</h3>
   {excerpt && <p class="card-excerpt">{excerpt}</p>}
@@ -79,4 +81,21 @@ const categoryClass = `tag${category}`;
     flex-wrap: wrap;
     gap: var(--space-2);
   }
+
+  .external-badge {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-left: auto;
+  }
+
+  /* Tag colors */
+  :global(.tag刑事) { background: #FEE2E2; color: #991B1B; }
+  :global(.tag民商) { background: #DBEAFE; color: #1E40AF; }
+  :global(.tag知产) { background: #D1FAE5; color: #065F46; }
+  :global(.tag涉外) { background: #FEF3C7; color: #92400E; }
+  :global(.tag互联网犯罪) { background: #F3E8FF; color: #6B21A8; }
+  :global(.tag刑事辩护) { background: #FEE2E2; color: #991B1B; }
+  :global(.tag医疗纠纷) { background: #D1FAE5; color: #065F46; }
+  :global(.tag热点评论) { background: #FEF3C7; color: #92400E; }
 </style>
