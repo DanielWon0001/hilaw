@@ -228,9 +228,23 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "news": {
+"ai-fake-photo-refund-scam.md": {
+	id: "ai-fake-photo-refund-scam.md";
+  slug: "ai-fake-photo-refund-scam";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
 "ai-law-draft.md": {
 	id: "ai-law-draft.md";
   slug: "ai-law-draft";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+"china-telecom-token-package-regulation.md": {
+	id: "china-telecom-token-package-regulation.md";
+  slug: "china-telecom-token-package-regulation";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
