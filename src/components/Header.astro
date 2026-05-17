@@ -12,16 +12,16 @@ const categories = [
 ];
 
 const navItems = [
-  { label: '首页', href: '/' },
-  { label: '热点新闻', href: '/news' },
-  { label: '新法推送', href: '/laws' },
-  { label: '典型案例', href: '/cases' },
+  { label: '首页', href: '/hilaw/' },
+  { label: '热点新闻', href: '/hilaw/news' },
+  { label: '新法推送', href: '/hilaw/laws' },
+  { label: '典型案例', href: '/hilaw/cases' },
 ];
 ---
 
 <header class="site-header">
   <div class="header-inner container">
-    <a href="/" class="logo">HiLaw</a>
+    <a href="/hilaw/" class="logo">HiLaw</a>
 
     <nav class="main-nav">
       {navItems.map(item => (
@@ -34,11 +34,11 @@ const navItems = [
         </button>
         <div class="dropdown-menu">
           {categories.map(cat => (
-            <a href={`/articles/${cat.slug}`} class="dropdown-item">{cat.name}</a>
+            <a href={`/hilaw/articles/${cat.slug}`} class="dropdown-item">{cat.name}</a>
           ))}
         </div>
       </div>
-      <a href="/about" class="nav-link">关于</a>
+      <a href="/hilaw/about" class="nav-link">关于</a>
     </nav>
 
     <button class="search-btn" aria-label="搜索" id="searchToggle">
@@ -68,10 +68,10 @@ const navItems = [
     <div class="mobile-categories">
       <span class="mobile-section-label">分类</span>
       {categories.map(cat => (
-        <a href={`/articles/${cat.slug}`} class="mobile-nav-link">{cat.name}</a>
+        <a href={`/hilaw/articles/${cat.slug}`} class="mobile-nav-link">{cat.name}</a>
       ))}
     </div>
-    <a href="/about" class="mobile-nav-link">关于</a>
+    <a href="/hilaw/about" class="mobile-nav-link">关于</a>
   </nav>
 </div>
 

@@ -20,9 +20,9 @@ interface PostItem {
 }
 
 const allPosts: PostItem[] = [
-  ...allNews.map(p => ({ ...p.data, slug: `/news/${p.slug}`, type: 'news' })),
-  ...allLaws.map(p => ({ ...p.data, slug: `/laws/${p.slug}`, type: 'law' })),
-  ...allCases.map(p => ({ ...p.data, slug: `/cases/${p.slug}`, type: 'case' })),
+  ...allNews.map(p => ({ ...p.data, slug: `/hilaw/news/${p.slug}`, type: 'news' })),
+  ...allLaws.map(p => ({ ...p.data, slug: `/hilaw/laws/${p.slug}`, type: 'law' })),
+  ...allCases.map(p => ({ ...p.data, slug: `/hilaw/cases/${p.slug}`, type: 'case' })),
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const byYear: Record<string, PostItem[]> = {};

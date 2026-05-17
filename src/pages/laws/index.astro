@@ -32,7 +32,7 @@ const sortedLaws = allLaws.sort((a, b) => new Date(b.data.date).getTime() - new 
               date={law.data.date}
               category={law.data.category}
               tags={law.data.tags}
-              href={`/laws/${law.slug}`}
+              href={`/hilaw/laws/${law.slug}`}
               type="law"
             />
           ))}

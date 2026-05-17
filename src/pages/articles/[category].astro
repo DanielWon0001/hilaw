@@ -51,9 +51,9 @@ interface PostItem {
 }
 
 const allPosts: PostItem[] = [
-  ...allNews.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/news/${p.slug}` })),
-  ...allLaws.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/laws/${p.slug}` })),
-  ...allCases.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/cases/${p.slug}` })),
+  ...allNews.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/hilaw/news/${p.slug}` })),
+  ...allLaws.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/hilaw/laws/${p.slug}` })),
+  ...allCases.map(p => ({ title: p.data.title, date: p.data.date, category: p.data.category, tags: p.data.tags, excerpt: p.data.excerpt, slug: p.slug, url: `/hilaw/cases/${p.slug}` })),
 ];
 
 const filteredPosts = allPosts.filter(p => p.category === categoryName);

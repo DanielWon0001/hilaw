@@ -33,7 +33,7 @@ const sortedCases = allCases.sort((a, b) => new Date(b.data.date).getTime() - ne
               category={caseItem.data.category}
               tags={caseItem.data.tags}
               source={caseItem.data.source}
-              href={`/cases/${caseItem.slug}`}
+              href={`/hilaw/cases/${caseItem.slug}`}
               type="case"
             />
           ))}

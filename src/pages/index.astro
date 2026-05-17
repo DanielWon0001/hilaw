@@ -46,7 +46,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
           <h4 class="tag-cloud-title">标签云</h4>
           <div class="tags">
             {topTags.map(([tag, count]) => (
-              <a href={`/tags/${encodeURIComponent(tag)}`} class="tag" style={`font-size: ${0.8 + count * 0.05}rem`}>
+              <a href={`/hilaw/tags/${encodeURIComponent(tag)}`} class="tag" style={`font-size: ${0.8 + count * 0.05}rem`}>
                 {tag}
               </a>
             ))}
@@ -59,7 +59,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
           <section class="feed-section">
             <div class="section-header">
               <h2 class="section-title">热点新闻</h2>
-              <a href="/news" class="section-more">查看全部 →</a>
+              <a href="/hilaw/news" class="section-more">查看全部 →</a>
             </div>
             <div class="news-list">
               {recentNews.map(news => (
@@ -70,7 +70,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
                   category={news.data.category}
                   tags={news.data.tags}
                   source={news.data.source}
-                  href={`/news/${news.slug}`}
+                  href={`/hilaw/news/${news.slug}`}
                   type="news"
                 />
               ))}
@@ -82,7 +82,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
           <section class="feed-section">
             <div class="section-header">
               <h2 class="section-title">新法推送</h2>
-              <a href="/laws" class="section-more">查看全部 →</a>
+              <a href="/hilaw/laws" class="section-more">查看全部 →</a>
             </div>
             <div class="news-list">
               {recentLaws.map(law => (
@@ -92,7 +92,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
                   date={law.data.date}
                   category={law.data.category}
                   tags={law.data.tags}
-                  href={`/laws/${law.slug}`}
+                  href={`/hilaw/laws/${law.slug}`}
                   type="law"
                 />
               ))}
@@ -104,7 +104,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
           <section class="feed-section">
             <div class="section-header">
               <h2 class="section-title">典型案例</h2>
-              <a href="/cases" class="section-more">查看全部 →</a>
+              <a href="/hilaw/cases" class="section-more">查看全部 →</a>
             </div>
             <div class="news-list">
               {recentCases.map(caseItem => (
@@ -115,7 +115,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
                   category={caseItem.data.category}
                   tags={caseItem.data.tags}
                   source={caseItem.data.source}
-                  href={`/cases/${caseItem.slug}`}
+                  href={`/hilaw/cases/${caseItem.slug}`}
                   type="case"
                 />
               ))}
@@ -127,7 +127,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
           <section class="feed-section">
             <div class="section-header">
               <h2 class="section-title">最新文章</h2>
-              <a href="/articles" class="section-more">查看全部 →</a>
+              <a href="/hilaw/articles" class="section-more">查看全部 →</a>
             </div>
             <div class="news-list">
               {recentArticles.map(article => (
@@ -137,7 +137,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
                   date={article.data.date}
                   category={article.data.category}
                   tags={article.data.tags}
-                  href={`/articles/${article.slug}`}
+                  href={`/hilaw/articles/${article.slug}`}
                   type="article"
                 />
               ))}
