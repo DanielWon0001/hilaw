@@ -23,7 +23,7 @@ const { activeSlug } = Astro.props;
     {categories.map(cat => (
       <li>
         <a
-          href={`/hilaw/articles/${cat.slug}`}
+          href={`/articles/${cat.slug}`}
           class={`nav-item ${activeSlug === cat.slug ? 'active' : ''}`}
         >
           {cat.name}

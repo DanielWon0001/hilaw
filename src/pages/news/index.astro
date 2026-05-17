@@ -33,7 +33,7 @@ const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new 
               category={news.data.category}
               tags={news.data.tags}
               source={news.data.source}
-              href={`/hilaw/news/${news.slug}`}
+              href={`/news/${news.slug}`}
               type="news"
             />
           ))}

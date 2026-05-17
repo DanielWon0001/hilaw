@@ -30,7 +30,7 @@ const { Content } = await article.render();
             {article.data.tags && article.data.tags.length > 0 && (
               <div class="article-tags">
                 {article.data.tags.map(tag => (
-                  <a href={`/hilaw/tags/${encodeURIComponent(tag)}`} class="tag">{tag}</a>
+                  <a href={`/tags/${encodeURIComponent(tag)}`} class="tag">{tag}</a>
                 ))}
               </div>
             )}
