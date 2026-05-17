@@ -138,6 +138,7 @@ const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 2
                   category={article.data.category}
                   tags={article.data.tags}
                   href={`/articles/${article.slug}`}
+                  type="article"
                 />
               ))}
             </div>

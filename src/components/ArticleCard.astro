@@ -7,42 +7,64 @@ export interface Props {
   tags?: string[];
   href: string;
   isExternal?: boolean;
+  type?: 'article' | 'news' | 'law' | 'case';
 }
-const { title, excerpt, date, category, tags = [], href, isExternal = false } = Astro.props;
-const categoryClass = `tag${category}`;
+const { title, excerpt, date, category, tags = [], href, isExternal = false, type = 'article' } = Astro.props;
+
+const colorMap: Record<string, string> = {
+  article: '#10B981',
+  news: 'var(--color-accent)',
+  law: 'var(--color-primary)',
+  case: '#9333EA',
+};
+const stripeColor = colorMap[type] || colorMap.article;
 ---
 
 <a href={href} class={`article-card fade-up ${isExternal ? 'external' : ''}`} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-  <div class="card-meta">
-    <span class={`tag ${categoryClass}`}>{category}</span>
-    <time class="card-date">{date}</time>
-    {isExternal && <span class="external-badge">原文 ↗</span>}
-  </div>
-  <h3 class="card-title">{title}</h3>
-  {excerpt && <p class="card-excerpt">{excerpt}</p>}
-  {tags.length > 0 && (
-    <div class="card-tags">
-      {tags.slice(0, 3).map(tag => (
-        <span class="tag">{tag}</span>
-      ))}
+  <div class="stripe" style={`background: ${stripeColor}`}></div>
+  <div class="card-body">
+    <div class="card-meta">
+      <span class={`tag tag-${category}`}>{category}</span>
+      <time class="card-date">{date}</time>
+      {isExternal && <span class="external-badge">原文 ↗</span>}
     </div>
-  )}
+    <h3 class="card-title">{title}</h3>
+    {excerpt && <p class="card-excerpt">{excerpt}</p>}
+    {tags.length > 0 && (
+      <div class="card-tags">
+        {tags.slice(0, 3).map(tag => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </div>
 </a>
 
 <style>
   .article-card {
-    display: block;
+    display: flex;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: var(--space-6);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
     text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   }
 
   .article-card:hover {
-    transform: scale(1.01);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    border-color: #CBD5E1;
+  }
+
+  .stripe {
+    width: 4px;
+    flex-shrink: 0;
+  }
+
+  .card-body {
+    padding: var(--space-6) var(--space-8);
+    flex: 1;
   }
 
   .card-meta {
@@ -50,11 +72,12 @@ const categoryClass = `tag${category}`;
     align-items: center;
     gap: var(--space-3);
     margin-bottom: var(--space-3);
+    flex-wrap: wrap;
   }
 
   .card-date {
     font-size: 0.85rem;
-    color: var(--color-text-secondary);
+    color: #94A3B8;
   }
 
   .card-title {
@@ -63,16 +86,17 @@ const categoryClass = `tag${category}`;
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: var(--space-2);
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   .card-excerpt {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 1.7;
     margin-bottom: var(--space-3);
   }
 
@@ -89,13 +113,15 @@ const categoryClass = `tag${category}`;
     margin-left: auto;
   }
 
-  /* Tag colors */
-  :global(.tag刑事) { background: #FEE2E2; color: #991B1B; }
-  :global(.tag民商) { background: #DBEAFE; color: #1E40AF; }
-  :global(.tag知产) { background: #D1FAE5; color: #065F46; }
-  :global(.tag涉外) { background: #FEF3C7; color: #92400E; }
-  :global(.tag互联网犯罪) { background: #F3E8FF; color: #6B21A8; }
-  :global(.tag刑事辩护) { background: #FEE2E2; color: #991B1B; }
-  :global(.tag医疗纠纷) { background: #D1FAE5; color: #065F46; }
-  :global(.tag热点评论) { background: #FEF3C7; color: #92400E; }
+  /* Tag colors by category */
+  .tag-刑事 { background: #FEE2E2; color: #991B1B; }
+  .tag-民商 { background: #DBEAFE; color: #1E40AF; }
+  .tag-知识产权 { background: #D1FAE5; color: #065F46; }
+  .tag-涉外 { background: #FEF3C7; color: #92400E; }
+  .tag-公司 { background: #E0E7FF; color: #3730A3; }
+  .tag-互联网犯罪 { background: #F3E8FF; color: #6B21A8; }
+  .tag-刑事辩护 { background: #FEE2E2; color: #991B1B; }
+  .tag-医疗纠纷 { background: #D1FAE5; color: #065F46; }
+  .tag-热点评论 { background: #FEF3C7; color: #92400E; }
+  .tag-医疗 { background: #D1FAE5; color: #065F46; }
 </style>
