@@ -20,8 +20,7 @@ const colorMap: Record<string, string> = {
 const stripeColor = colorMap[type] || colorMap.article;
 ---
 
-<a href={href} class={`article-card fade-up ${isExternal ? 'external' : ''}`} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-  <div class="stripe" style={`background: ${stripeColor}`}></div>
+<a href={href} class={`article-card fade-up ${isExternal ? 'external' : ''}`} style={`--stripe-color: ${stripeColor}`} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
   <div class="card-body">
     <div class="card-meta">
       <span class={`tag tag-${category}`}>{category}</span>
@@ -42,7 +41,8 @@ const stripeColor = colorMap[type] || colorMap.article;
 
 <style>
   .article-card {
-    display: flex;
+    position: relative;
+    display: block;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
@@ -51,20 +51,24 @@ const stripeColor = colorMap[type] || colorMap.article;
     transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   }
 
+  .article-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--stripe-color, #10B981);
+  }
+
   .article-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     border-color: #CBD5E1;
   }
 
-  .stripe {
-    width: 4px;
-    flex-shrink: 0;
-  }
-
   .card-body {
     padding: var(--space-6) var(--space-8);
-    flex: 1;
   }
 
   .card-meta {
