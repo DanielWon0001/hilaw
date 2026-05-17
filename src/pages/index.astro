@@ -12,9 +12,9 @@ const allLaws = await getCollection('laws');
 const allCases = await getCollection('cases');
 const allArticles = await getCollection('articles');
 
-const recentNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 4);
-const recentLaws = allLaws.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
-const recentCases = allCases.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
+const recentNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 2);
+const recentLaws = allLaws.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 2);
+const recentCases = allCases.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 2);
 const recentArticles = allArticles.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 2);
 
 const allTags = [...allNews, ...allLaws, ...allCases].flatMap(item => item.data.tags);

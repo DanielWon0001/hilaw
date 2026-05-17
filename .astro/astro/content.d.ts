@@ -159,6 +159,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"luoyang-ev-ban-commentary.md": {
+	id: "luoyang-ev-ban-commentary.md";
+  slug: "luoyang-ev-ban-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "video-ai-rumor.mdx": {
 	id: "video-ai-rumor.mdx";
   slug: "video-ai-rumor";
