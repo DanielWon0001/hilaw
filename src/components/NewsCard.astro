@@ -14,7 +14,7 @@ const { title, excerpt, date, category, tags = [], source, href, type = 'news' }
 const colorMap: Record<string, string> = {
   news: 'var(--color-accent)',
   law: 'var(--color-primary)',
-  case: '#9333EA',
+  case: 'var(--color-warm)',
 };
 const stripeColor = colorMap[type] || colorMap.news;
 ---

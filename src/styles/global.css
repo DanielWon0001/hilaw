@@ -2,19 +2,20 @@
 
 /* CSS Variables */
 :root {
-  --color-primary: #2563EB;
-  --color-primary-dark: #1D4ED8;
-  --color-primary-light: #EFF6FF;
-  --color-accent: #F97316;
-  --color-accent-light: #FFF7ED;
-  --color-bg: #F8FAFC;
+  /* Warm, restrained palette — no cold blues/purples */
+  --color-primary: #D4883A;      /* warm amber — professional, not icy */
+  --color-primary-dark: #B06E28;
+  --color-primary-light: #FDF6EC;
+  --color-accent: #C4826A;       /* warm terracotta — gentle, not harsh orange */
+  --color-accent-light: #FDF5F0;
+  --color-bg: #FAF9F7;           /* warm off-white, not cold gray */
   --color-surface: #FFFFFF;
-  --color-text: #1E293B;
-  --color-text-secondary: #64748B;
-  --color-border: #E2E8F0;
-  --color-tag-bg: #F1F5F9;
-  --color-purple: #7C3AED;
-  --color-success: #10B981;
+  --color-text: #2C2417;         /* warm dark brown, not pure black */
+  --color-text-secondary: #8A7B6B;/* warm gray-brown */
+  --color-border: #E8E3DC;        /* warm light border */
+  --color-tag-bg: #F2EDE6;       /* warm tag background */
+  --color-warm: #A67C52;         /* warm brown for accents */
+  --color-success: #7A9E7E;      /* warm sage green */
 
   --font-serif: 'Noto Serif SC', Georgia, serif;
   --font-sans: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
@@ -504,7 +505,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 50%, #FFF7ED 100%);
+  background: linear-gradient(135deg, #FDF6EC 0%, #F8FAFC 50%, #FDF5F0 100%);
   padding: 80px 0 60px;
   position: relative;
   overflow: hidden;
@@ -516,8 +517,8 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 85% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 40%);
+    radial-gradient(circle at 15% 50%, rgba(212, 136, 58, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(196, 130, 106, 0.06) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -880,7 +881,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== PAGE HEADER ===== */
 .page-hero {
-  background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 50%, #FFF7ED 100%);
+  background: linear-gradient(135deg, #FDF6EC 0%, #F8FAFC 50%, #FDF5F0 100%);
   padding: 60px 0 48px;
   position: relative;
   overflow: hidden;
@@ -892,8 +893,8 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 85% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 40%);
+    radial-gradient(circle at 15% 50%, rgba(212, 136, 58, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(196, 130, 106, 0.06) 0%, transparent 40%);
   pointer-events: none;
 }
 
