@@ -152,6 +152,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"articles": {
+"2026-three-laws-daily-life.mdx": {
+	id: "2026-three-laws-daily-life.mdx";
+  slug: "2026-three-laws-daily-life";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "fake-blind-video.mdx": {
 	id: "fake-blind-video.mdx";
   slug: "fake-blind-video";
@@ -192,6 +199,41 @@ declare module 'astro:content' {
 "blockchain-company-fraud.md": {
 	id: "blockchain-company-fraud.md";
   slug: "blockchain-company-fraud";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-247-wang-bribery.md": {
+	id: "case-247-wang-bribery.md";
+  slug: "case-247-wang-bribery";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-248-huang-bribery-laundering.md": {
+	id: "case-248-huang-bribery-laundering.md";
+  slug: "case-248-huang-bribery-laundering";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-249-cai-bribery-money-laundering.md": {
+	id: "case-249-cai-bribery-money-laundering.md";
+  slug: "case-249-cai-bribery-money-laundering";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-250-he-bribery.md": {
+	id: "case-250-he-bribery.md";
+  slug: "case-250-he-bribery";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-251-sun-bribery.md": {
+	id: "case-251-sun-bribery.md";
+  slug: "case-251-sun-bribery";
   body: string;
   collection: "cases";
   data: InferEntrySchema<"cases">
@@ -249,6 +291,20 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"china-2026-legislative-plan.mdx": {
+	id: "china-2026-legislative-plan.mdx";
+  slug: "china-2026-legislative-plan";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"china-arbitration-law-revision-2026.mdx": {
+	id: "china-arbitration-law-revision-2026.mdx";
+  slug: "china-arbitration-law-revision-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "china-telecom-token-package-regulation.md": {
 	id: "china-telecom-token-package-regulation.md";
   slug: "china-telecom-token-package-regulation";
