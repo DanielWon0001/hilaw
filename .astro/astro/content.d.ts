@@ -238,6 +238,41 @@ declare module 'astro:content' {
   collection: "cases";
   data: InferEntrySchema<"cases">
 } & { render(): Render[".md"] };
+"case-252-henan-land-admin.md": {
+	id: "case-252-henan-land-admin.md";
+  slug: "case-252-henan-land-admin";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-253-hunan-manganese-pollution.md": {
+	id: "case-253-hunan-manganese-pollution.md";
+  slug: "case-253-hunan-manganese-pollution";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-254-baotou-hazardous-waste.md": {
+	id: "case-254-baotou-hazardous-waste.md";
+  slug: "case-254-baotou-hazardous-waste";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-255-shandong-radiation-pollution.md": {
+	id: "case-255-shandong-radiation-pollution.md";
+  slug: "case-255-shandong-radiation-pollution";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
+"case-256-guangdong-illegal-mining.md": {
+	id: "case-256-guangdong-illegal-mining.md";
+  slug: "case-256-guangdong-illegal-mining";
+  body: string;
+  collection: "cases";
+  data: InferEntrySchema<"cases">
+} & { render(): Render[".md"] };
 "case-277-patent-infringement.md": {
 	id: "case-277-patent-infringement.md";
   slug: "case-277-patent-infringement";
