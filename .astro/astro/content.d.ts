@@ -354,6 +354,20 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"drone-hacking-public-security.md": {
+	id: "drone-hacking-public-security.md";
+  slug: "drone-hacking-public-security";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+"fudan-professor-parents-report.md": {
+	id: "fudan-professor-parents-report.md";
+  slug: "fudan-professor-parents-report";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
 };
 
 	};
