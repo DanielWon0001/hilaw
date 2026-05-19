@@ -173,6 +173,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"shiju-student-competition-bonus-2026.mdx": {
+	id: "shiju-student-competition-bonus-2026.mdx";
+  slug: "shiju-student-competition-bonus-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "video-ai-rumor.mdx": {
 	id: "video-ai-rumor.mdx";
   slug: "video-ai-rumor";
