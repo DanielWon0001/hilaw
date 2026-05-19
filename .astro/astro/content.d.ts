@@ -180,6 +180,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"thailand-police-kidnap-commentary.mdx": {
+	id: "thailand-police-kidnap-commentary.mdx";
+  slug: "thailand-police-kidnap-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "video-ai-rumor.mdx": {
 	id: "video-ai-rumor.mdx";
   slug: "video-ai-rumor";
@@ -371,6 +378,20 @@ declare module 'astro:content' {
 "fudan-professor-parents-report.md": {
 	id: "fudan-professor-parents-report.md";
   slug: "fudan-professor-parents-report";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+"shanghai-jiao-tong-student-discipline.md": {
+	id: "shanghai-jiao-tong-student-discipline.md";
+  slug: "shanghai-jiao-tong-student-discipline";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+"thailand-police-kidnap-chinese.md": {
+	id: "thailand-police-kidnap-chinese.md";
+  slug: "thailand-police-kidnap-chinese";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
