@@ -382,15 +382,17 @@ const navItems = [
   async function loadSearchIndex() {
     if (fuse) return;
     try {
-      const [newsRes, lawsRes, casesRes] = await Promise.all([
+      const [newsRes, lawsRes, casesRes, articlesRes] = await Promise.all([
         fetch('/news.json').catch(() => null),
         fetch('/laws.json').catch(() => null),
         fetch('/cases.json').catch(() => null),
+        fetch('/articles.json').catch(() => null),
       ]);
       const news = newsRes ? await newsRes.json() : [];
       const laws = lawsRes ? await lawsRes.json() : [];
       const cases = casesRes ? await casesRes.json() : [];
-      searchIndex = [...news, ...laws, ...cases];
+      const articles = articlesRes ? await articlesRes.json() : [];
+      searchIndex = [...news, ...laws, ...cases, ...articles];
       const Fuse = (await import('fuse.js')).default;
       fuse = new Fuse(searchIndex, { keys: ['title', 'excerpt'], threshold: 0.3 });
     } catch (e) { console.warn('Search index load failed', e); }
