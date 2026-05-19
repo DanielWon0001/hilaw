@@ -454,11 +454,22 @@ p:last-child { margin-bottom: 0; }
 
 .footer-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
   padding-bottom: 32px;
   border-bottom: 1px solid #334155;
   margin-bottom: 24px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  font-size: 0.8rem;
+  color: #475569;
 }
 
 .footer-brand {
