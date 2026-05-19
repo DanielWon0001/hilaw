@@ -1,0 +1,101 @@
+---
+// 订阅组件 - 通过 Buttondown newsletter 平台收集邮箱
+---
+
+<section class="subscribe-section">
+  <h3>📬 订阅更新</h3>
+  <p>输入邮箱，订阅嗨唠网最新文章推送</p>
+  <form
+    class="subscribe-form"
+    action="https://buttondown.email/api/emails/embed-subscribe/hilaw"
+    method="post"
+    target="blank"
+    onsubmit="handleSubscribe(this)"
+  >
+    <input
+      type="email"
+      name="email"
+      placeholder="your@email.com"
+      required
+      class="subscribe-input"
+    />
+    <button type="submit" class="subscribe-button">订阅</button>
+  </form>
+  <p class="subscribe-note">每周精选推送，不骚扰</p>
+</section>
+
+<script is:inline>
+  function handleSubscribe(form) {
+    // 订阅成功后显示提示
+    setTimeout(() => {
+      const note = document.querySelector('.subscribe-note');
+      if (note) {
+        note.textContent = '✅ 订阅成功！请查收确认邮件';
+        note.style.color = '#22c55e';
+        form.style.display = 'none';
+      }
+    }, 500);
+  }
+</script>
+
+<style>
+  .subscribe-section {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 1rem;
+  }
+
+  .subscribe-section h3 {
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-color);
+  }
+
+  .subscribe-section p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .subscribe-input {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.875rem;
+  }
+
+  .subscribe-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+
+  .subscribe-button {
+    padding: 0.5rem 1rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .subscribe-button:hover {
+    background: #2563eb;
+  }
+
+  .subscribe-note {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+</style>
