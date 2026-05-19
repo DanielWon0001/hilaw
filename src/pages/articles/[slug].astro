@@ -39,17 +39,13 @@ const { Content } = await article.render();
         <div class="article-body">
           <Content />
         </div>
-
-        <!-- 评论 -->
-        <div class="comment-section"><div class="commentbox"></div></div>
       </article>
     </div>
   </main>
 
   <Footer />
 
-  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-  <script>commentBox('5721933932920832-proj');</script>
+
 </BaseLayout>
 
 <style>
@@ -66,9 +62,6 @@ const { Content } = await article.render();
   .article-body :global(pre) { background: #1a1a2e; color: #e0e0e0; padding: var(--space-4); border-radius: 8px; overflow-x: auto; font-size: 0.9rem; margin: var(--space-6) 0; }
   .article-body :global(code) { font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.9em; }
   .article-body :global(blockquote) { border-left: 4px solid var(--color-primary); padding-left: var(--space-4); color: var(--color-text-secondary); margin: var(--space-6) 0; font-style: italic; }
-
-  /* 评论区域 */
-  .comment-section { margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--color-border); }
 
   /* Tag colors */
   .tag-刑事 { background: #FEE2E2; color: #991B1B; }
