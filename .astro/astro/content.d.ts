@@ -159,6 +159,20 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"dangerous-dog-death-sentencing-2026.mdx": {
+	id: "dangerous-dog-death-sentencing-2026.mdx";
+  slug: "dangerous-dog-death-sentencing-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"divorce-child-custody-article-2026.mdx": {
+	id: "divorce-child-custody-article-2026.mdx";
+  slug: "divorce-child-custody-article-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "fake-blind-video.mdx": {
 	id: "fake-blind-video.mdx";
   slug: "fake-blind-video";
@@ -197,6 +211,13 @@ declare module 'astro:content' {
 "wushan-elder-medical-delay.mdx": {
 	id: "wushan-elder-medical-delay.mdx";
   slug: "wushan-elder-medical-delay";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"yangshuo-rice-noodle-yin-yang-menu-2026.mdx": {
+	id: "yangshuo-rice-noodle-yin-yang-menu-2026.mdx";
+  slug: "yangshuo-rice-noodle-yin-yang-menu-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -368,6 +389,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"divorce-child-custody-abandonment-2026.mdx": {
+	id: "divorce-child-custody-abandonment-2026.mdx";
+  slug: "divorce-child-custody-abandonment-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "drone-hacking-public-security.md": {
 	id: "drone-hacking-public-security.md";
   slug: "drone-hacking-public-security";
@@ -382,6 +410,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"national-security-router-espionage-2026.mdx": {
+	id: "national-security-router-espionage-2026.mdx";
+  slug: "national-security-router-espionage-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "shanghai-jiao-tong-student-discipline.md": {
 	id: "shanghai-jiao-tong-student-discipline.md";
   slug: "shanghai-jiao-tong-student-discipline";
