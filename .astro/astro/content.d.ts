@@ -187,9 +187,23 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"shanxi-coal-mine-explosion-commentary.mdx": {
+	id: "shanxi-coal-mine-explosion-commentary.mdx";
+  slug: "shanxi-coal-mine-explosion-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "shiju-student-competition-bonus-2026.mdx": {
 	id: "shiju-student-competition-bonus-2026.mdx";
   slug: "shiju-student-competition-bonus-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"sister-seeks-justice-27-years-commentary.mdx": {
+	id: "sister-seeks-justice-27-years-commentary.mdx";
+  slug: "sister-seeks-justice-27-years-commentary";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -211,6 +225,13 @@ declare module 'astro:content' {
 "wushan-elder-medical-delay.mdx": {
 	id: "wushan-elder-medical-delay.mdx";
   slug: "wushan-elder-medical-delay";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"yangmei-food-safety-scandal-commentary-2026.mdx": {
+	id: "yangmei-food-safety-scandal-commentary-2026.mdx";
+  slug: "yangmei-food-safety-scandal-commentary-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -375,6 +396,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"china-football-association-bans-17-people.mdx": {
+	id: "china-football-association-bans-17-people.mdx";
+  slug: "china-football-association-bans-17-people";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "china-telecom-token-package-regulation.md": {
 	id: "china-telecom-token-package-regulation.md";
   slug: "china-telecom-token-package-regulation";
@@ -410,6 +438,20 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"fujian-yangmei-food-safety-scandal-2026.mdx": {
+	id: "fujian-yangmei-food-safety-scandal-2026.mdx";
+  slug: "fujian-yangmei-food-safety-scandal-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"married-man-68-affair-90s-mistress-bear-children-2026.mdx": {
+	id: "married-man-68-affair-90s-mistress-bear-children-2026.mdx";
+  slug: "married-man-68-affair-90s-mistress-bear-children-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "national-security-router-espionage-2026.mdx": {
 	id: "national-security-router-espionage-2026.mdx";
   slug: "national-security-router-espionage-2026";
@@ -424,6 +466,27 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"shanxi-coal-mine-explosion-82-dead.mdx": {
+	id: "shanxi-coal-mine-explosion-82-dead.mdx";
+  slug: "shanxi-coal-mine-explosion-82-dead";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"sister-seeks-justice-for-brother-27-years.mdx": {
+	id: "sister-seeks-justice-for-brother-27-years.mdx";
+  slug: "sister-seeks-justice-for-brother-27-years";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"taiwan-baby-48hrs-alone.mdx": {
+	id: "taiwan-baby-48hrs-alone.mdx";
+  slug: "taiwan-baby-48hrs-alone";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "thailand-police-kidnap-chinese.md": {
 	id: "thailand-police-kidnap-chinese.md";
   slug: "thailand-police-kidnap-chinese";
