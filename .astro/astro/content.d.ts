@@ -236,6 +236,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"wechat-insult-beating-legal-analysis-2026.mdx": {
+	id: "wechat-insult-beating-legal-analysis-2026.mdx";
+  slug: "wechat-insult-beating-legal-analysis-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "wushan-elder-medical-delay.mdx": {
 	id: "wushan-elder-medical-delay.mdx";
   slug: "wushan-elder-medical-delay";
