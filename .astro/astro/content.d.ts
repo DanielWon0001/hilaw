@@ -187,6 +187,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"nanjing-toupao-gongwuyuan-commentary-2026.mdx": {
+	id: "nanjing-toupao-gongwuyuan-commentary-2026.mdx";
+  slug: "nanjing-toupao-gongwuyuan-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "shanxi-coal-mine-explosion-commentary.mdx": {
 	id: "shanxi-coal-mine-explosion-commentary.mdx";
   slug: "shanxi-coal-mine-explosion-commentary";
@@ -204,6 +211,13 @@ declare module 'astro:content' {
 "sister-seeks-justice-27-years-commentary.mdx": {
 	id: "sister-seeks-justice-27-years-commentary.mdx";
   slug: "sister-seeks-justice-27-years-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"surrogacy-journalist-attacked-2026.mdx": {
+	id: "surrogacy-journalist-attacked-2026.mdx";
+  slug: "surrogacy-journalist-attacked-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -368,6 +382,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "news": {
+"600-year-ancient-tree-destruction-2026.mdx": {
+	id: "600-year-ancient-tree-destruction-2026.mdx";
+  slug: "600-year-ancient-tree-destruction-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "ai-fake-photo-refund-scam.md": {
 	id: "ai-fake-photo-refund-scam.md";
   slug: "ai-fake-photo-refund-scam";
@@ -431,6 +452,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"foreign-cyberattack-chinese-university-2026.mdx": {
+	id: "foreign-cyberattack-chinese-university-2026.mdx";
+  slug: "foreign-cyberattack-chinese-university-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "fudan-professor-parents-report.md": {
 	id: "fudan-professor-parents-report.md";
   slug: "fudan-professor-parents-report";
@@ -452,9 +480,30 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"nanjing-audit-university-upskirt-photo-civil-servant-2026.mdx": {
+	id: "nanjing-audit-university-upskirt-photo-civil-servant-2026.mdx";
+  slug: "nanjing-audit-university-upskirt-photo-civil-servant-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "national-security-router-espionage-2026.mdx": {
 	id: "national-security-router-espionage-2026.mdx";
   slug: "national-security-router-espionage-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"netherlands-warship-south-china-sea-2026.mdx": {
+	id: "netherlands-warship-south-china-sea-2026.mdx";
+  slug: "netherlands-warship-south-china-sea-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"overage-worker-rights-regulation-2026.mdx": {
+	id: "overage-worker-rights-regulation-2026.mdx";
+  slug: "overage-worker-rights-regulation-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -480,6 +529,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"surrogacy-denounced-journalist-attacked-2026.mdx": {
+	id: "surrogacy-denounced-journalist-attacked-2026.mdx";
+  slug: "surrogacy-denounced-journalist-attacked-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "taiwan-baby-48hrs-alone.mdx": {
 	id: "taiwan-baby-48hrs-alone.mdx";
   slug: "taiwan-baby-48hrs-alone";
@@ -494,6 +550,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"wechat-insult-beating-brain-concussion-2026.mdx": {
+	id: "wechat-insult-beating-brain-concussion-2026.mdx";
+  slug: "wechat-insult-beating-brain-concussion-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 };
 
 	};
