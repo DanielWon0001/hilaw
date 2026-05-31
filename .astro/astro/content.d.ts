@@ -152,9 +152,30 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"articles": {
+"12-year-old-orphan-uncle-140万-2026.mdx": {
+	id: "12-year-old-orphan-uncle-140万-2026.mdx";
+  slug: "12-year-old-orphan-uncle-140万-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"17-year-old-girl-650万-refund-rejected-2026.mdx": {
+	id: "17-year-old-girl-650万-refund-rejected-2026.mdx";
+  slug: "17-year-old-girl-650万-refund-rejected-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "2026-three-laws-daily-life.mdx": {
 	id: "2026-three-laws-daily-life.mdx";
   slug: "2026-three-laws-daily-life";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"ai-deepfake-scam-commentary-2026.mdx": {
+	id: "ai-deepfake-scam-commentary-2026.mdx";
+  slug: "ai-deepfake-scam-commentary-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
