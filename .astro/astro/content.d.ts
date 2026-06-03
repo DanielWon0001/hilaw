@@ -180,6 +180,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"broken-finger-plan-commentary.mdx": {
+	id: "broken-finger-plan-commentary.mdx";
+  slug: "broken-finger-plan-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "dangerous-dog-death-sentencing-2026.mdx": {
 	id: "dangerous-dog-death-sentencing-2026.mdx";
   slug: "dangerous-dog-death-sentencing-2026";
@@ -197,6 +204,27 @@ declare module 'astro:content' {
 "fake-blind-video.mdx": {
 	id: "fake-blind-video.mdx";
   slug: "fake-blind-video";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"hotel-girl-rape-case-commentary.mdx": {
+	id: "hotel-girl-rape-case-commentary.mdx";
+  slug: "hotel-girl-rape-case-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"hpv-infect-silence-litigation-2026.mdx": {
+	id: "hpv-infect-silence-litigation-2026.mdx";
+  slug: "hpv-infect-silence-litigation-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"livestream-fake-beef-commentary-2026.mdx": {
+	id: "livestream-fake-beef-commentary-2026.mdx";
+  slug: "livestream-fake-beef-commentary-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -431,6 +459,20 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"boy-sells-gold-bar-2026.md": {
+	id: "boy-sells-gold-bar-2026.md";
+  slug: "boy-sells-gold-bar-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+"broken-finger-plan-2026.mdx": {
+	id: "broken-finger-plan-2026.mdx";
+  slug: "broken-finger-plan-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "china-2026-legislative-plan.mdx": {
 	id: "china-2026-legislative-plan.mdx";
   slug: "china-2026-legislative-plan";
@@ -480,6 +522,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"employees-steal-eggs-400-million-xiangjia-2026.mdx": {
+	id: "employees-steal-eggs-400-million-xiangjia-2026.mdx";
+  slug: "employees-steal-eggs-400-million-xiangjia-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "foreign-cyberattack-chinese-university-2026.mdx": {
 	id: "foreign-cyberattack-chinese-university-2026.mdx";
   slug: "foreign-cyberattack-chinese-university-2026";
@@ -497,6 +546,34 @@ declare module 'astro:content' {
 "fujian-yangmei-food-safety-scandal-2026.mdx": {
 	id: "fujian-yangmei-food-safety-scandal-2026.mdx";
   slug: "fujian-yangmei-food-safety-scandal-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"hotel-liability-underage-rape-2026.mdx": {
+	id: "hotel-liability-underage-rape-2026.mdx";
+  slug: "hotel-liability-underage-rape-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"hunan-flood-cadre-cyberbullying-2026.mdx": {
+	id: "hunan-flood-cadre-cyberbullying-2026.mdx";
+  slug: "hunan-flood-cadre-cyberbullying-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"husband-smashes-car-window-jailed-2026.mdx": {
+	id: "husband-smashes-car-window-jailed-2026.mdx";
+  slug: "husband-smashes-car-window-jailed-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"livestream-fake-beef-court-2026.mdx": {
+	id: "livestream-fake-beef-court-2026.mdx";
+  slug: "livestream-fake-beef-court-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -571,9 +648,23 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"tanzania-chinese-merchants-kidnapping-2026.mdx": {
+	id: "tanzania-chinese-merchants-kidnapping-2026.mdx";
+  slug: "tanzania-chinese-merchants-kidnapping-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "thailand-police-kidnap-chinese.md": {
 	id: "thailand-police-kidnap-chinese.md";
   slug: "thailand-police-kidnap-chinese";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+"vape-drink-minors-2026.md": {
+	id: "vape-drink-minors-2026.md";
+  slug: "vape-drink-minors-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
