@@ -257,6 +257,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"shuanghui-dividend-antibiotic-commentary-2026.mdx": {
+	id: "shuanghui-dividend-antibiotic-commentary-2026.mdx";
+  slug: "shuanghui-dividend-antibiotic-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "sister-seeks-justice-27-years-commentary.mdx": {
 	id: "sister-seeks-justice-27-years-commentary.mdx";
   slug: "sister-seeks-justice-27-years-commentary";
@@ -459,6 +466,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"boy-lucky-money-divorce-2026.mdx": {
+	id: "boy-lucky-money-divorce-2026.mdx";
+  slug: "boy-lucky-money-divorce-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "boy-sells-gold-bar-2026.md": {
 	id: "boy-sells-gold-bar-2026.md";
   slug: "boy-sells-gold-bar-2026";
@@ -606,9 +620,30 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"old-house-solar-panel-dispute-2026.mdx": {
+	id: "old-house-solar-panel-dispute-2026.mdx";
+  slug: "old-house-solar-panel-dispute-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "overage-worker-rights-regulation-2026.mdx": {
 	id: "overage-worker-rights-regulation-2026.mdx";
   slug: "overage-worker-rights-regulation-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"retired-couple-divorce-9870-million-2026.mdx": {
+	id: "retired-couple-divorce-9870-million-2026.mdx";
+  slug: "retired-couple-divorce-9870-million-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"shanghai-divorce-98-million-2026.mdx": {
+	id: "shanghai-divorce-98-million-2026.mdx";
+  slug: "shanghai-divorce-98-million-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -620,9 +655,23 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"shanghai-minor-lucky-money-220000-2026.mdx": {
+	id: "shanghai-minor-lucky-money-220000-2026.mdx";
+  slug: "shanghai-minor-lucky-money-220000-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "shanxi-coal-mine-explosion-82-dead.mdx": {
 	id: "shanxi-coal-mine-explosion-82-dead.mdx";
   slug: "shanxi-coal-mine-explosion-82-dead";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"shuanghui-10-year-payout-scandal-2026.mdx": {
+	id: "shuanghui-10-year-payout-scandal-2026.mdx";
+  slug: "shuanghui-10-year-payout-scandal-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
