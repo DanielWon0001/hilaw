@@ -180,6 +180,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"boy-lucky-money-divorce-commentary-2026.mdx": {
+	id: "boy-lucky-money-divorce-commentary-2026.mdx";
+  slug: "boy-lucky-money-divorce-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "broken-finger-plan-commentary.mdx": {
 	id: "broken-finger-plan-commentary.mdx";
   slug: "broken-finger-plan-commentary";
@@ -281,6 +288,20 @@ declare module 'astro:content' {
 "thailand-police-kidnap-commentary.mdx": {
 	id: "thailand-police-kidnap-commentary.mdx";
   slug: "thailand-police-kidnap-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"toupai-kaiqiu-chengxu-zhengyi-2026-06-07.mdx": {
+	id: "toupai-kaiqiu-chengxu-zhengyi-2026-06-07.mdx";
+  slug: "toupai-kaiqiu-chengxu-zhengyi-2026-06-07";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"toupai-kaiqiu-chengxu-zhengyi-2026.mdx": {
+	id: "toupai-kaiqiu-chengxu-zhengyi-2026.mdx";
+  slug: "toupai-kaiqiu-chengxu-zhengyi-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -445,9 +466,23 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "news": {
+"18-year-old-trojan-developer-game-fraud-2026.mdx": {
+	id: "18-year-old-trojan-developer-game-fraud-2026.mdx";
+  slug: "18-year-old-trojan-developer-game-fraud-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "600-year-ancient-tree-destruction-2026.mdx": {
 	id: "600-year-ancient-tree-destruction-2026.mdx";
   slug: "600-year-ancient-tree-destruction-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"ai-digital-supervisor-labor-rights-2026.mdx": {
+	id: "ai-digital-supervisor-labor-rights-2026.mdx";
+  slug: "ai-digital-supervisor-labor-rights-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -564,6 +599,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"hebei-geo-university-female-toilet-peeping-2026.mdx": {
+	id: "hebei-geo-university-female-toilet-peeping-2026.mdx";
+  slug: "hebei-geo-university-female-toilet-peeping-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "hotel-liability-underage-rape-2026.mdx": {
 	id: "hotel-liability-underage-rape-2026.mdx";
   slug: "hotel-liability-underage-rape-2026";
@@ -606,6 +648,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"nankai-student-fraud-220-million-2026.mdx": {
+	id: "nankai-student-fraud-220-million-2026.mdx";
+  slug: "nankai-student-fraud-220-million-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "national-security-router-espionage-2026.mdx": {
 	id: "national-security-router-espionage-2026.mdx";
   slug: "national-security-router-espionage-2026";
@@ -641,13 +690,6 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
-"shanghai-divorce-98-million-2026.mdx": {
-	id: "shanghai-divorce-98-million-2026.mdx";
-  slug: "shanghai-divorce-98-million-2026";
-  body: string;
-  collection: "news";
-  data: InferEntrySchema<"news">
-} & { render(): Render[".mdx"] };
 "shanghai-jiao-tong-student-discipline.md": {
 	id: "shanghai-jiao-tong-student-discipline.md";
   slug: "shanghai-jiao-tong-student-discipline";
@@ -655,16 +697,16 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
-"shanghai-minor-lucky-money-220000-2026.mdx": {
-	id: "shanghai-minor-lucky-money-220000-2026.mdx";
-  slug: "shanghai-minor-lucky-money-220000-2026";
+"shanxi-coal-mine-explosion-82-dead.mdx": {
+	id: "shanxi-coal-mine-explosion-82-dead.mdx";
+  slug: "shanxi-coal-mine-explosion-82-dead";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
-"shanxi-coal-mine-explosion-82-dead.mdx": {
-	id: "shanxi-coal-mine-explosion-82-dead.mdx";
-  slug: "shanxi-coal-mine-explosion-82-dead";
+"shixi-yisheng-wuzheng-baya-zhisi-2026-06-05.mdx": {
+	id: "shixi-yisheng-wuzheng-baya-zhisi-2026-06-05.mdx";
+  slug: "shixi-yisheng-wuzheng-baya-zhisi-2026-06-05";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -721,6 +763,27 @@ declare module 'astro:content' {
 "wechat-insult-beating-brain-concussion-2026.mdx": {
 	id: "wechat-insult-beating-brain-concussion-2026.mdx";
   slug: "wechat-insult-beating-brain-concussion-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"wei-xiaodong-beijing-cppcc-chair-investigated-2026.mdx": {
+	id: "wei-xiaodong-beijing-cppcc-chair-investigated-2026.mdx";
+  slug: "wei-xiaodong-beijing-cppcc-chair-investigated-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"weichengnian-nuhai-zhibo-gongsi-wei-lie-2026-06-05.mdx": {
+	id: "weichengnian-nuhai-zhibo-gongsi-wei-lie-2026-06-05.mdx";
+  slug: "weichengnian-nuhai-zhibo-gongsi-wei-lie-2026-06-05";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"xiangya-2nd-hospital-827m-bidding-2026.mdx": {
+	id: "xiangya-2nd-hospital-827m-bidding-2026.mdx";
+  slug: "xiangya-2nd-hospital-827m-bidding-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
