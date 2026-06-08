@@ -292,13 +292,6 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
-"toupai-kaiqiu-chengxu-zhengyi-2026.mdx": {
-	id: "toupai-kaiqiu-chengxu-zhengyi-2026.mdx";
-  slug: "toupai-kaiqiu-chengxu-zhengyi-2026";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
 "video-ai-rumor.mdx": {
 	id: "video-ai-rumor.mdx";
   slug: "video-ai-rumor";
