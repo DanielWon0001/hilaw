@@ -334,6 +334,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"偷拍者拟开除-程序能等正义不能.mdx": {
+	id: "偷拍者拟开除-程序能等正义不能.mdx";
+  slug: "偷拍者拟开除-程序能等正义不能";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 };
 "cases": {
 "ai-face-swap-case.md": {
@@ -515,6 +522,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"cat-abuse-whistleblower-doxing-threats-2026.mdx": {
+	id: "cat-abuse-whistleblower-doxing-threats-2026.mdx";
+  slug: "cat-abuse-whistleblower-doxing-threats-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "china-2026-legislative-plan.mdx": {
 	id: "china-2026-legislative-plan.mdx";
   slug: "china-2026-legislative-plan";
@@ -553,6 +567,13 @@ declare module 'astro:content' {
 "divorce-child-custody-abandonment-2026.mdx": {
 	id: "divorce-child-custody-abandonment-2026.mdx";
   slug: "divorce-child-custody-abandonment-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"doctor-whistleblower-hospital-retaliation-2026.mdx": {
+	id: "doctor-whistleblower-hospital-retaliation-2026.mdx";
+  slug: "doctor-whistleblower-hospital-retaliation-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
