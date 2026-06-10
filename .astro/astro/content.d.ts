@@ -208,6 +208,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"dongguan-wife-murder-depression-defense-2026.mdx": {
+	id: "dongguan-wife-murder-depression-defense-2026.mdx";
+  slug: "dongguan-wife-murder-depression-defense-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "fake-blind-video.mdx": {
 	id: "fake-blind-video.mdx";
   slug: "fake-blind-video";
@@ -253,6 +260,13 @@ declare module 'astro:content' {
 "shanxi-coal-mine-explosion-commentary.mdx": {
 	id: "shanxi-coal-mine-explosion-commentary.mdx";
   slug: "shanxi-coal-mine-explosion-commentary";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"shijiazhuang-wife-murder-depression-defense-2026.mdx": {
+	id: "shijiazhuang-wife-murder-depression-defense-2026.mdx";
+  slug: "shijiazhuang-wife-murder-depression-defense-2026";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -466,6 +480,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"3-year-old-girl-falls-from-10th-floor-2026.mdx": {
+	id: "3-year-old-girl-falls-from-10th-floor-2026.mdx";
+  slug: "3-year-old-girl-falls-from-10th-floor-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "600-year-ancient-tree-destruction-2026.mdx": {
 	id: "600-year-ancient-tree-destruction-2026.mdx";
   slug: "600-year-ancient-tree-destruction-2026";
@@ -585,6 +606,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"female-shopper-1100-clothes-1000-refund-2026.mdx": {
+	id: "female-shopper-1100-clothes-1000-refund-2026.mdx";
+  slug: "female-shopper-1100-clothes-1000-refund-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "foreign-cyberattack-chinese-university-2026.mdx": {
 	id: "foreign-cyberattack-chinese-university-2026.mdx";
   slug: "foreign-cyberattack-chinese-university-2026";
@@ -602,6 +630,13 @@ declare module 'astro:content' {
 "fujian-yangmei-food-safety-scandal-2026.mdx": {
 	id: "fujian-yangmei-food-safety-scandal-2026.mdx";
   slug: "fujian-yangmei-food-safety-scandal-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"guangdong-wife-murder-depression-death-penalty-reprieve-2026.mdx": {
+	id: "guangdong-wife-murder-depression-death-penalty-reprieve-2026.mdx";
+  slug: "guangdong-wife-murder-depression-death-penalty-reprieve-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -690,9 +725,30 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"refund-only-1000-clothes-fraud-2026.mdx": {
+	id: "refund-only-1000-clothes-fraud-2026.mdx";
+  slug: "refund-only-1000-clothes-fraud-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "retired-couple-divorce-9870-million-2026.mdx": {
 	id: "retired-couple-divorce-9870-million-2026.mdx";
   slug: "retired-couple-divorce-9870-million-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"shanghai-finance-manager-780-million-2026.mdx": {
+	id: "shanghai-finance-manager-780-million-2026.mdx";
+  slug: "shanghai-finance-manager-780-million-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"shanghai-financial-manager-780-million-2026.mdx": {
+	id: "shanghai-financial-manager-780-million-2026.mdx";
+  slug: "shanghai-financial-manager-780-million-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
@@ -707,6 +763,13 @@ declare module 'astro:content' {
 "shanxi-coal-mine-explosion-82-dead.mdx": {
 	id: "shanxi-coal-mine-explosion-82-dead.mdx";
   slug: "shanxi-coal-mine-explosion-82-dead";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"shijiazhuang-birthday-wife-murder-depression-2026.mdx": {
+	id: "shijiazhuang-birthday-wife-murder-depression-2026.mdx";
+  slug: "shijiazhuang-birthday-wife-murder-depression-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
