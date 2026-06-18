@@ -215,6 +215,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"diaper-toxic-acetamide-commentary-2026.mdx": {
+	id: "diaper-toxic-acetamide-commentary-2026.mdx";
+  slug: "diaper-toxic-acetamide-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "divorce-child-custody-article-2026.mdx": {
 	id: "divorce-child-custody-article-2026.mdx";
   slug: "divorce-child-custody-article-2026";
