@@ -166,6 +166,20 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"2026-06-10-掐颈十分钟-然后说-我抑郁了-从石家庄杀妻案看-抑郁症辩护-的法律边界.mdx": {
+	id: "2026-06-10-掐颈十分钟-然后说-我抑郁了-从石家庄杀妻案看-抑郁症辩护-的法律边界.mdx";
+  slug: "2026-06-10-掐颈十分钟-然后说-我抑郁了-从石家庄杀妻案看-抑郁症辩护-的法律边界";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
+"2026-06-12-三岁女童10楼坠落-帮忙照看法律意味着什么.mdx": {
+	id: "2026-06-12-三岁女童10楼坠落-帮忙照看法律意味着什么.mdx";
+  slug: "2026-06-12-三岁女童10楼坠落-帮忙照看法律意味着什么";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "2026-three-laws-daily-life.mdx": {
 	id: "2026-three-laws-daily-life.mdx";
   slug: "2026-three-laws-daily-life";
@@ -578,6 +592,20 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"diaper-toxic-acetamide-detected-2026.mdx": {
+	id: "diaper-toxic-acetamide-detected-2026.mdx";
+  slug: "diaper-toxic-acetamide-detected-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"diazepam-fish-bait-chain-exposed-2026.mdx": {
+	id: "diazepam-fish-bait-chain-exposed-2026.mdx";
+  slug: "diazepam-fish-bait-chain-exposed-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "divorce-child-custody-abandonment-2026.mdx": {
 	id: "divorce-child-custody-abandonment-2026.mdx";
   slug: "divorce-child-custody-abandonment-2026";
@@ -669,9 +697,23 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"ledong-child-death-medical-dispute-2026.mdx": {
+	id: "ledong-child-death-medical-dispute-2026.mdx";
+  slug: "ledong-child-death-medical-dispute-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "livestream-fake-beef-court-2026.mdx": {
 	id: "livestream-fake-beef-court-2026.mdx";
   slug: "livestream-fake-beef-court-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"married-couple-cohabitation-bigamy-2026.mdx": {
+	id: "married-couple-cohabitation-bigamy-2026.mdx";
+  slug: "married-couple-cohabitation-bigamy-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
