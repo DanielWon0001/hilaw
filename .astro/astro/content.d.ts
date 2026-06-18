@@ -669,6 +669,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"guangdong-overloading-minors-dangerous-driving-2026.mdx": {
+	id: "guangdong-overloading-minors-dangerous-driving-2026.mdx";
+  slug: "guangdong-overloading-minors-dangerous-driving-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "guangdong-wife-murder-depression-death-penalty-reprieve-2026.mdx": {
 	id: "guangdong-wife-murder-depression-death-penalty-reprieve-2026.mdx";
   slug: "guangdong-wife-murder-depression-death-penalty-reprieve-2026";
@@ -872,6 +879,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"uae-social-media-minimum-age-15-2026.mdx": {
+	id: "uae-social-media-minimum-age-15-2026.mdx";
+  slug: "uae-social-media-minimum-age-15-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "vape-drink-minors-2026.md": {
 	id: "vape-drink-minors-2026.md";
   slug: "vape-drink-minors-2026";
