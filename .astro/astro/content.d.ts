@@ -320,6 +320,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"telecom-price-discrimination-commentary-2026.mdx": {
+	id: "telecom-price-discrimination-commentary-2026.mdx";
+  slug: "telecom-price-discrimination-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "thailand-police-kidnap-commentary.mdx": {
 	id: "thailand-police-kidnap-commentary.mdx";
   slug: "thailand-police-kidnap-commentary";
