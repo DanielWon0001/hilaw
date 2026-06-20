@@ -711,6 +711,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"japan-visa-fee-5x-increase-2026.mdx": {
+	id: "japan-visa-fee-5x-increase-2026.mdx";
+  slug: "japan-visa-fee-5x-increase-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "ledong-child-death-medical-dispute-2026.mdx": {
 	id: "ledong-child-death-medical-dispute-2026.mdx";
   slug: "ledong-child-death-medical-dispute-2026";
@@ -868,6 +875,13 @@ declare module 'astro:content' {
 "tanzania-chinese-merchants-kidnapping-2026.mdx": {
 	id: "tanzania-chinese-merchants-kidnapping-2026.mdx";
   slug: "tanzania-chinese-merchants-kidnapping-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"telecom-packages-price-discrimination-2026.mdx": {
+	id: "telecom-packages-price-discrimination-2026.mdx";
+  slug: "telecom-packages-price-discrimination-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
