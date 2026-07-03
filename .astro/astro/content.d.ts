@@ -599,6 +599,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"civil-affairs-branch-rules-2026.mdx": {
+	id: "civil-affairs-branch-rules-2026.mdx";
+  slug: "civil-affairs-branch-rules-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "cyber-crime-supreme-court.md": {
 	id: "cyber-crime-supreme-court.md";
   slug: "cyber-crime-supreme-court";
@@ -931,6 +938,13 @@ declare module 'astro:content' {
 "weichengnian-nuhai-zhibo-gongsi-wei-lie-2026-06-05.mdx": {
 	id: "weichengnian-nuhai-zhibo-gongsi-wei-lie-2026-06-05.mdx";
   slug: "weichengnian-nuhai-zhibo-gongsi-wei-lie-2026-06-05";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"woman-self-funded-stairlift-opposed-2026.mdx": {
+	id: "woman-self-funded-stairlift-opposed-2026.mdx";
+  slug: "woman-self-funded-stairlift-opposed-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
