@@ -313,6 +313,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"stairlift-vs-fire-code-commentary-2026.mdx": {
+	id: "stairlift-vs-fire-code-commentary-2026.mdx";
+  slug: "stairlift-vs-fire-code-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "surrogacy-journalist-attacked-2026.mdx": {
 	id: "surrogacy-journalist-attacked-2026.mdx";
   slug: "surrogacy-journalist-attacked-2026";
