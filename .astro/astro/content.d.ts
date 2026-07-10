@@ -655,6 +655,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"elderly-choking-carrot-caretaker-liability-2026.mdx": {
+	id: "elderly-choking-carrot-caretaker-liability-2026.mdx";
+  slug: "elderly-choking-carrot-caretaker-liability-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "employees-steal-eggs-400-million-xiangjia-2026.mdx": {
 	id: "employees-steal-eggs-400-million-xiangjia-2026.mdx";
   slug: "employees-steal-eggs-400-million-xiangjia-2026";
@@ -686,6 +693,13 @@ declare module 'astro:content' {
 "fujian-yangmei-food-safety-scandal-2026.mdx": {
 	id: "fujian-yangmei-food-safety-scandal-2026.mdx";
   slug: "fujian-yangmei-food-safety-scandal-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"ghost-takeout-platforms-fined-3-6-billion-2026.mdx": {
+	id: "ghost-takeout-platforms-fined-3-6-billion-2026.mdx";
+  slug: "ghost-takeout-platforms-fined-3-6-billion-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
