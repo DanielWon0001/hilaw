@@ -236,6 +236,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"elderly-choking-caretaker-liability-commentary-2026.mdx": {
+	id: "elderly-choking-caretaker-liability-commentary-2026.mdx";
+  slug: "elderly-choking-caretaker-liability-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "fake-blind-video.mdx": {
 	id: "fake-blind-video.mdx";
   slug: "fake-blind-video";
