@@ -334,6 +334,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"tangxiangyu-sexual-harassment-defamation-commentary-2026.mdx": {
+	id: "tangxiangyu-sexual-harassment-defamation-commentary-2026.mdx";
+  slug: "tangxiangyu-sexual-harassment-defamation-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "telecom-price-discrimination-commentary-2026.mdx": {
 	id: "telecom-price-discrimination-commentary-2026.mdx";
   slug: "telecom-price-discrimination-commentary-2026";
@@ -914,6 +921,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"tangxiangyu-sexual-harassment-boycott-defamation-2026.mdx": {
+	id: "tangxiangyu-sexual-harassment-boycott-defamation-2026.mdx";
+  slug: "tangxiangyu-sexual-harassment-boycott-defamation-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "tanzania-chinese-merchants-kidnapping-2026.mdx": {
 	id: "tanzania-chinese-merchants-kidnapping-2026.mdx";
   slug: "tanzania-chinese-merchants-kidnapping-2026";
@@ -980,6 +994,13 @@ declare module 'astro:content' {
 "xiangya-2nd-hospital-827m-bidding-2026.mdx": {
 	id: "xiangya-2nd-hospital-827m-bidding-2026.mdx";
   slug: "xiangya-2nd-hospital-827m-bidding-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"zhoushen-defamation-lawsuit-4-wins-2026.mdx": {
+	id: "zhoushen-defamation-lawsuit-4-wins-2026.mdx";
+  slug: "zhoushen-defamation-lawsuit-4-wins-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
