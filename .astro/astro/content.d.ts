@@ -208,6 +208,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"changsha-official-parking-space-commentary-2026.mdx": {
+	id: "changsha-official-parking-space-commentary-2026.mdx";
+  slug: "changsha-official-parking-space-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "dangerous-dog-death-sentencing-2026.mdx": {
 	id: "dangerous-dog-death-sentencing-2026.mdx";
   slug: "dangerous-dog-death-sentencing-2026";
@@ -592,6 +599,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"changsha-official-occupies-parking-space-2026.mdx": {
+	id: "changsha-official-occupies-parking-space-2026.mdx";
+  slug: "changsha-official-occupies-parking-space-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "china-2026-legislative-plan.mdx": {
 	id: "china-2026-legislative-plan.mdx";
   slug: "china-2026-legislative-plan";
@@ -949,6 +963,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"typhoon-bawi-rumor-punishment-zhejiang-2026.mdx": {
+	id: "typhoon-bawi-rumor-punishment-zhejiang-2026.mdx";
+  slug: "typhoon-bawi-rumor-punishment-zhejiang-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "uae-social-media-minimum-age-15-2026.mdx": {
 	id: "uae-social-media-minimum-age-15-2026.mdx";
   slug: "uae-social-media-minimum-age-15-2026";
