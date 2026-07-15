@@ -187,6 +187,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"ai-companion-regulation-commentary-2026.mdx": {
+	id: "ai-companion-regulation-commentary-2026.mdx";
+  slug: "ai-companion-regulation-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "ai-deepfake-scam-commentary-2026.mdx": {
 	id: "ai-deepfake-scam-commentary-2026.mdx";
   slug: "ai-deepfake-scam-commentary-2026";
@@ -571,6 +578,20 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"ai-personalized-interaction-regulation-effective-2026.mdx": {
+	id: "ai-personalized-interaction-regulation-effective-2026.mdx";
+  slug: "ai-personalized-interaction-regulation-effective-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"apple-sues-openai-trade-secret-2026.mdx": {
+	id: "apple-sues-openai-trade-secret-2026.mdx";
+  slug: "apple-sues-openai-trade-secret-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "boy-lucky-money-divorce-2026.mdx": {
 	id: "boy-lucky-money-divorce-2026.mdx";
   slug: "boy-lucky-money-divorce-2026";
