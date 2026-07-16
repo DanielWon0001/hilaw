@@ -292,6 +292,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"lv-trademark-dispute-cnipa-commentary-2026.mdx": {
+	id: "lv-trademark-dispute-cnipa-commentary-2026.mdx";
+  slug: "lv-trademark-dispute-cnipa-commentary-2026";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".mdx"] };
 "nanjing-toupao-gongwuyuan-commentary-2026.mdx": {
 	id: "nanjing-toupao-gongwuyuan-commentary-2026.mdx";
   slug: "nanjing-toupao-gongwuyuan-commentary-2026";
@@ -718,6 +725,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".mdx"] };
+"faked-death-during-bail-drunk-driving-2026.mdx": {
+	id: "faked-death-during-bail-drunk-driving-2026.mdx";
+  slug: "faked-death-during-bail-drunk-driving-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
 "female-shopper-1100-clothes-1000-refund-2026.mdx": {
 	id: "female-shopper-1100-clothes-1000-refund-2026.mdx";
   slug: "female-shopper-1100-clothes-1000-refund-2026";
@@ -812,6 +826,13 @@ declare module 'astro:content' {
 "livestream-fake-beef-court-2026.mdx": {
 	id: "livestream-fake-beef-court-2026.mdx";
   slug: "livestream-fake-beef-court-2026";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".mdx"] };
+"lv-sues-cnipa-sixth-time-2026.mdx": {
+	id: "lv-sues-cnipa-sixth-time-2026.mdx";
+  slug: "lv-sues-cnipa-sixth-time-2026";
   body: string;
   collection: "news";
   data: InferEntrySchema<"news">
